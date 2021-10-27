@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zad2</title>
+</head>
+<body>
+    <header> 
+        <h1> 
+        <a href="C:\Users\Laura\Desktop\FERIT III\Programsko_inžinjerstvo\FERIT_SoftwareEngineering\lv1\ferit-website.html" target="blank">OBRAZAC</a>
+        </h1>
+    </header>
+
+    <form>
+        <label for="korisnicko_ime">Unesite korisničko ime:</label><br>
+        <input type="text" id="korisnicko_ime" name="korisnicko_ime" maxlength="15" placeholder="korisnicko ime"> <br>
+        <label for="lozinka">Unesite lozinku:</label> <br>
+        <input type="password" id="lozinka" name="lozinka" maxlength="15" placeholder="lozinka"> <br>
+    </form>
+
+    <div class="Izbornik"> 
+        <label for = "ocjena">Odaberite ocjenu:</label>
+            <select ocjena = "ocjene" id = "ocjene">
+                <option value = "5">5</option>
+                <option value = "4">4</option>
+                <option value = "3">3</option>
+                <option value = "2">2</option>
+                <option value = "1">1</option>
+            </select>
+    </div>
+
+    <div class="Komentar">
+        <label for = "tekst">Unesite komentar:</label> <br>
+        <textarea name = "Komentar" form = "tekst" rows="7" maxlength="40" placeholder="komentar"></textarea>
+    </div>
+
+    <div class="Usmeni ispit"> 
+        <label for = "ocjena">Odaberite ocjenu usmenog ispita:</label> <br>
+        <input type="radio" id="komunikativan" name="ocjena" value="komunikativan">
+        <label for="komunikativan">Komunikativan</label><br>
+        
+        <input type="radio" id="samostalan" name="ocjena" value="samostalan">
+        <label for="samostalan">Samostalan</label><br>
+        
+        <input type="radio" id="radisan" name="ocjena" value="radisan">
+        <label for="radisan">Radišan</label><br>
+        
+        <input type="radio" id="nista" name="ocjena" value="nista" checked>
+        <label for="nista">Ništa od navedenog</label><br>
+    </div>
+
+    <div>
+        <table id="table1" border="1">
+              <tr>
+                <td>
+                     <input id="pošalji" type="submit" name="pošalji" value="Pošalji" />
+                    </form>
+                </td>
+            </tr>
+                <tr>
+                   <td>
+                        <input id="poništi" type="submit" name="poništi" value="Poništi" />
+                       </form>
+                   </td>
+              </tr>
+        </table>
+    </div>
+
+</body>
+</html>
