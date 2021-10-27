@@ -1,0 +1,28 @@
+#lista li{
+    padding: 20px 20px 20px 20px;
+    display: inline;
+    padding-left: 15px;
+    padding-right: 15 px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin: 8px 8px 8px 8px;
+    border: 2px #345678 solid;
+}
+
+#lista li a{
+    border: 2px blueviolet;
+    color: blueviolet;
+    background-color: #16cae1;
+    text-decoration: none;
+}
+
+#lista li a:hover{
+    background-color: burlywood;
+    border-color: cadetblue;
+}
+
+#lista li a:active{
+    color: red;
+    background-color: seagreen;
+    border-color: red;
+}

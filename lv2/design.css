@@ -1,0 +1,25 @@
+/* obični selektor */
+p{
+    text-align: right;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-style: italic;
+    color: blue;
+}
+
+/* klasni selektor */
+p.prvi{
+    text-align: center;
+    color: red;
+    font-style: 110%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ID selektor */
+#odlomak2{
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a:hover{
+    color: yellow
+}
