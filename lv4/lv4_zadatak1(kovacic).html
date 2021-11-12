@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "css.css">
+    <title>Validacija</title>
+</head>
+<body>
+    
+    <h1>Validacija</h1>
+    <div id = "prvi">
+        <form>
+            <button type = "button" ondblclick="pozdrav()">Pozdrav</button> <br>
+
+            <label for = "text">Ime i prezime: </label>
+            <input type = "text" id = "ime" placeholder="Unesite ime i prezime"> <br>
+
+            <label for = "textarea">Polje za ispis:</label>
+            <textarea id = "kovacic" cols = "50" rows = "10" placeholder="Mjesto za ispis kolegija." disabled></textarea> <br>
+
+            <label for = "text">Umetnite broj:</label>
+            <input type = "number" id = "broj">
+            <i class = "fa fa-question-circle" title = "Broj mora biti između 1 i 10">?</i>
+            <button type = "button" onclick = "kvadriraj()">kvadriraj</button> <br>
+
+            <button type = "button" onmouseup = "kolegiji()">Kolegiji</button>
+            <button type = "button" onmouseover = "obriši()">Obriši</button>
+
+            <p id = "kvadrat">Ovdje će se ispisati rezultat</p> <br>
+            
+            <label for = "email">Vaša e-mail adresa:</label>
+            <input type = "email" id = "email"><br> <br>
+            <button onclick = "validacija()">Provjeri</button> <br>
+
+        </form>
+    </div>
+
+    <script>
+        function pozdrav(){
+            for(i = 1; i < 6; i++){
+                alert(i +". upozorenje");
+            }
+        }
+
+        function validacija(){
+            counter = 0;
+
+            let ime = document.getElementById("ime").value;
+            if(ime.length == 0){
+                counter += 1;
+                alert("Polje za unos imena ne smije biti prazno!")
+            }
+            else if (ime.length < 3){
+                counter += 1;
+                alert("Ime ne može imati manje od 3 slova.")
+            }
+            let kovacic = document.getElementById("kovacic").value;
+            if(kovacic.length < 30){
+                counter += 1; 
+                alert("Polje mora sadržavati više od 30 znakova!")
+            }
+
+            let broj = document.getElementById("broj").value;
+            if(broj < 1 || broj > 10) {
+                counter += 1;
+                alert("Uneseni broj nije u zadanom intervalu, pokušajte ponovno.")
+            }
+
+            let email = document.forms[0]["email"].value;
+            let email_split = email.split("@");
+         
+            if(email == "" || email == null){
+                alert("Unesite email!");
+                return;
+            }
+            if(email.search("@") == -1){
+                alert("Nedostaje znak '@' u emailu!");
+                return;
+            }
+            if(email_split[0].length < 2){
+                alert("Broj znakova ispred '@' mora biti najmanje 2!");
+                return;
+            }
+            if(email_split[1].length < 2){
+                alert("Broj znakova nakon '@' mora biti najmanje 2!");
+                return;
+            }
+            if(email.indexOf(".") == -1){
+                alert("Nema točke!");
+                return;
+            }
+            let split2 = email_split[1].split(".");
+            if(split2[0].length < 2){
+                alert("Broj znakova ispred . mora biti najmanje 2");
+                return;
+            }
+            if(split2[1].length < 2){
+                alert("Broj znakova iza . mora biti najmanje 2");
+                return;
+            }
+
+            if(counter == 0){
+                let email = document.getElementById("email").value;
+                var array = document.getElementById("ime").value.split(" ");
+                let ime = array[0];
+                let prezime = array[1];
+                confirm("Vaše ime je " + ime + ", vaše prezime je " + prezime + ", vaša email adresa je " + email);
+            }
+        }
+
+        function kvadriraj(){
+            let broj = document.getElementById("broj").value;
+            if(broj < 1 || broj > 10){
+                document.getElementById("kvadrat").innerHTML = "Broj koji ste unijeli ne nalazi se u zadanom intervalu"
+            }
+            else{
+                broj = Math.pow(broj, 2);
+                document.getElementById("kvadrat").innerHTML = broj;
+            }
+        }
+
+        function kolegiji(){
+            const kovacic = document.getElementById("kovacic");
+            if(kovacic.innerHTML == ""){
+                const kolegiji = ["Web_Programiranje", "Programsko_Inženjerstvo", "DuOOP", "Razvoj_MA", "Praksa", "ZavršniRad"]
+                let counter = 0;
+                for(var brojKolegija in kolegiji){
+                    counter += 1;
+                    document.getElementById('kovacic').innerHTML += ("Kolegij br. [" + counter);
+                    document.getElementById('kovacic').innerHTML += ("]: " + kolegiji[brojKolegija] + "\n");
+                }
+            }
+        }
+
+        function obriši(){
+            document.getElementById("kovacic").innerHTML = "";
+        }
+    </script>
+    <script src="lv4.js"></script>
+</body>
+</html>

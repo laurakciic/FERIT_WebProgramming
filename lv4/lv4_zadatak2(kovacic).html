@@ -1,0 +1,66 @@
+<html>
+    <head>
+        
+        <title>JavaScript</title>
+    </head>
+    <body>
+        <h1>Jednostavna tvorba objekta</h1>
+        <script type="text/javascript">
+
+            function pas(ime, pasmina, starost)
+            {
+                this.ime=ime;
+                this.pasmina=pasmina;
+                this.starost=starost;
+            }
+
+            function macka(ime, boja, dob, spol)
+            {
+                this.ime = ime;
+                this.boja = boja;
+                this.dob = dob;
+                this.spol = spol;
+            }
+
+            var bijeli=new pas("jura","dalmatiner","8");
+            var garavi=new pas("garo", "mješanac","nepoznato")
+            var cuko = new pas ("toro", "tornjak", "2")
+            var cukac = new pas ("kan", "kangal", "7")
+
+            var tigar = new macka("kiko", "tigrasta", "2", "musko")
+            var micika = new macka("mango", "zuti", "4", "musko")
+            micika.dob = 3;
+
+            document.write(
+            "Ime prvog psa je: " + bijeli.ime
+            + ", pasmina: " + bijeli.pasmina
+            + " i starost: " + bijeli.starost + "<br>")
+
+            document.write(
+            "Ime drugog psa je: " + garavi.ime
+            + ", pasmina: " + garavi.pasmina
+            + " i starost: " + garavi.starost + "<br>")
+
+            document.write(
+            "Ime treceg psa je: " + cuko.ime
+            + ", pasmina: " + cuko.pasmina
+            + " i starost: " + cuko.starost + "<br>")
+
+            document.write(
+            "Ime cetvrtog psa je: " + cukac.ime
+            + ", pasmina: " + cukac.pasmina
+            + " i starost: " + cukac.starost + "<br>")
+            
+            document.write(
+            "Ime tigra je: " + tigar.ime
+            + ", boja: " + tigar.boja
+            + " i dob: " + tigar.dob + "<br>")
+
+            document.write(
+            "Dob micike: " + micika.dob + "<br>")
+
+        </script>
+        <br>
+        <script src="lv4.js"></script>
+    </body>
+</html>
