@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+        
+    <body>
+        <h2 class="naslov"><i>Ovo je naslov</i></h2>
+        <p class="odlomak" id="prvi">Ovo je prvi paragraf</p>
+        <p class="odlomak" id="drugi">Ovo je drugi paragraf</p>
+        <img src="cat.jpg" width="200px" height="200px" id="slika">
+        <button>Klikni me</button>
+        
+        <script>
+            $("button").click(function(){ $("p:first").hide(); } );
+            $(document).ready(function(){ console.log("ready!"); });
+        </script>
+    </body>
+</html>

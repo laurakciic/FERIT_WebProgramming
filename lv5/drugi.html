@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <h1 class="naslov"><i>Ovo je naslov</i></h1>
+
+        <p class="lista1">Ovo je prva lista mojih najdražih filmova:</p>
+        <ul>
+            <li>Braveheart</li>
+            <li>Venom</li>
+            <li>Inception</li>
+        </ul>
+        
+        <p class="lista2">Ovo je druga s pjesmama:</p>
+        <ul class="list">
+            <li>Chief Keef - I Don't Like</li>
+            <li>Offset - Ric Flair Drip</li>
+            <li>YNW Melly - Mama Cry </li>
+        </ul>
+
+        <img src="doggo1.jpg" width="200px" height="200px" id="prva">
+        <img src="doggo2.jpg" width="200px" height="200px" id="druga">
+        <img src="doggo3.jpg" width="200px" height="200px" id="treca"><br>
+
+        <button id="list">Klikni me</button>
+        <button id="btn2">Abrakadabra</button>
+
+        <script>
+            $("#list").click(function(){ $("ul:first").css("color", "green"); });
+        </script>
+
+        <script>
+            $("#prva").click(function(){ $("#prva").hide() });
+            $("#druga").click(function(){ $("#druga").hide() });
+            $("#treca").click(function(){ $("#treca").hide() });
+        </script>
+
+        <script>
+            $("#prva").hover(function(){ $("#prva").css("border", "2px solid black") });
+            $("#druga").hover(function(){ $("#druga").css("border", "2px solid black") });
+            $("#treca").hover(function(){ $("#treca").css("border", "2px solid black") });
+        </script>
+
+        <script>
+            $(document).ready(function()
+            {
+                $("#btn2").click(function(){ 
+                    $("#prva").fadeToggle(); 
+                    $("#druga").fadeToggle("slow"); 
+                    $("#treca").fadeToggle(5000);
+                });
+            });
+        </script>
+    </body>
+</html>

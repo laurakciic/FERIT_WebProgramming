@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+      <style>
+        #draggable1 { width: 200px; height: 200px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+        #draggable2 { width: 200px; height: 200px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+        #droppable1 { width: 400px; height: 400px; padding: 0.5em; float: right; margin: 10px 10px; background-color: rgb(0, 173, 196);}
+        #droppable2 { width: 400px; height: 400px; padding: 0.5em; float: right; margin: 10px 10px; background-color: rgb(222, 184, 135);}
+      </style>
+  </head>
+
+  <body>
+
+    <script>
+        $(function() {
+            $("#draggable1, #draggable-nonvalid").draggable({ revert:"invalid" });
+            $("#droppable1").droppable(
+            { accept: "#draggable1", classes: 
+                { 
+                    "ui-droppable-active": "ui-state-active", 
+                    "ui-droppable-hover": "ui-state-hover"
+                },
+                drop: function(event, ui) { $(this).addClass("ui-state-highlight").find("p:prvi").html("Dropped!"); }
+            });
+        });
+    </script>
+
+    <script>
+        $(function() {
+        $("#draggable2, #draggable-nonvalid").draggable({ revert:"invalid" });
+        $("#droppable2" ).droppable(
+            { accept: "#draggable2", classes:
+            {
+                "ui-droppable-active": "ui-state-active",
+                "ui-droppable-hover": "ui-state-hover"
+            },
+            
+            drop: function(event, ui) { $(this).addClass("ui-state-highlight").find("p:drugi").html("Dropped!"); }
+            });
+        });
+    </script>
+        
+  <div id="draggable1" class="ui-widget-content">
+    <img src="doggo1.jpg" alt="doggo1" style="width:200px;height:200px;">
+  </div>
+
+  <div id="draggable2" class="ui-widget-content">
+    <img src="doggo3.jpg" alt="doggo3" style="width:200px;height:200px;">
+  </div>
+
+  <div id="droppable1" class="ui-widget-header">
+    <p class="prvi">Doggo1 </p>
+  </div>
+
+  <div id="droppable2" class="ui-widget-header">
+    <p class="drugi">Doggo3</p>
+  </div>
+        
+  </body>
+</html>
