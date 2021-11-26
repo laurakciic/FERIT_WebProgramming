@@ -80,7 +80,7 @@
     }
 
     $kupac1 = new Kupac();
-    $kupac1->set_ime("Luka");
+    $kupac1->set_ime("Laura");
     $kupac1->set_prezime("Ron");
     $kupac1->ispisKupca();
 
